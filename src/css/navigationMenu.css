@@ -1,0 +1,90 @@
+/* General Reset */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Sidebar styles */
+.sidebar {
+  background-color: #343a40;
+  color: white;
+  width: 250px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: -250px; /* Initially off-screen */
+  z-index: 1000;
+  transition: left 0.3s ease-in-out; /* Slide-in transition */
+  padding-top: 20px; /* Add some padding to the top */
+}
+
+.sidebar.open {
+  left: 0; /* When sidebar is open */
+}
+
+/* Navigation List */
+.nav-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-item {
+  padding: 10px 20px;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  font-size: 1.2em;
+}
+
+/* Dropdown styles */
+.dropdown {
+  list-style: none;
+  padding-left: 20px;
+}
+
+.dropdown-item {
+  padding: 5px 0;
+}
+
+.dropdown-toggle {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.bi-chevron-up, .bi-chevron-down {
+  font-size: 1em;
+}
+
+.bi {
+  font-size: 1.2em;
+}
+
+/* Burger Icon */
+.burger-icon {
+  display: none;
+  font-size: 2em;
+  cursor: pointer;
+  color: #27367f;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 2000; /* Ensures it's always visible on top */
+}
+
+@media (max-width: 768px) {
+  .burger-icon {
+    display: block; /* Show burger icon on smaller screens */
+  }
+
+  /* Sidebar visibility on smaller screens */
+  .sidebar.open {
+    left: 0; /* Make the sidebar visible */
+  }
+}
